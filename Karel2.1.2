@@ -1,0 +1,15 @@
+void followTheSeeds()
+{
+    while(beeperAhead() || onBeeper())
+    {
+        while(beeperAhead())
+        {
+            moveForward();
+            pickBeeper();
+        }
+        if(!beeperAhead())
+        {
+            turnLeft();
+        }
+    }
+}
