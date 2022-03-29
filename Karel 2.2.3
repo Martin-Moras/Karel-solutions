@@ -1,0 +1,40 @@
+void addSlow()
+{
+    while(frontIsClear())
+    {
+        while(!onBeeper() && frontIsClear())
+        {
+            dropBeeper();
+            moveForward();
+        }
+        if(frontIsClear())
+        {
+            pickBeeper();
+            turnAround();
+            
+            while(frontIsClear())
+            {
+                moveForward();
+            }
+            turnRight();
+            moveForward();
+            turnRight();
+            
+            while(onBeeper())
+            {
+                pickBeeper();
+                moveForward();
+            }
+            dropBeeper();
+            turnAround();
+            
+            while(frontIsClear())
+            {
+                moveForward();
+            }
+            turnLeft();
+            moveForward();
+            turnLeft();
+        }
+    }
+}
