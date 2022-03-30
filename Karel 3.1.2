@@ -1,0 +1,60 @@
+void fetchTheStars()
+{
+    while(frontIsClear() || !onBeeper())
+    {
+        turnLeft();
+        
+        if(frontIsClear())
+        {
+            moveForward();
+            if(frontIsClear())
+            {
+                moveForward();
+                if(frontIsClear())
+                {
+                    moveForward();
+                    if(frontIsClear())
+                    {
+                        moveForward();
+                        if(frontIsClear())
+                        {
+                            moveForward();
+                            if(frontIsClear())
+                            {
+                                moveForward();
+                                if(frontIsClear())
+                                {
+                                    moveForward();
+                                    turnAround();
+                                    pickBeeper();
+                                    moveForward();
+                                }
+                                else{ pickBeeper();turnAround(); }
+                                moveForward();
+                            }
+                            else{ pickBeeper();turnAround(); }
+                            moveForward();
+                        }
+                        else{ pickBeeper();turnAround(); }
+                        moveForward();
+                    }
+                    else{ pickBeeper();turnAround(); }
+                    moveForward();
+                }
+                else{ pickBeeper();turnAround(); }
+                moveForward();
+            }
+            else{ pickBeeper();turnAround(); }
+            moveForward();
+        }
+        else{ pickBeeper();turnAround(); }
+        
+        dropBeeper();
+        turnLeft();
+        
+        if(frontIsClear())
+        {
+            moveForward();
+        }
+    }
+}
