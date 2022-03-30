@@ -1,0 +1,115 @@
+void secureTheCave()
+{
+    turnLeft();
+    while(frontIsClear())
+    {
+        while(frontIsClear())
+        {
+            moveForward();
+        }
+        turnAround();
+        if(onBeeper())
+        {
+            pickBeeper();
+            if(frontIsClear()){ moveForward(); }
+            if(onBeeper())
+            {
+                pickBeeper();
+                if(frontIsClear()){ moveForward(); }
+                if(onBeeper())
+                {
+                    pickBeeper();
+                    if(frontIsClear()){ moveForward(); }
+                    if(onBeeper())
+                    {
+                        pickBeeper();
+                        if(frontIsClear()){ moveForward(); }
+                        if(onBeeper())
+                        {
+                            pickBeeper();
+                            if(frontIsClear()){ moveForward(); }
+                            if(onBeeper())
+                            {
+                                pickBeeper();
+                                if(frontIsClear()){ moveForward(); }
+                                if(onBeeper())
+                                {
+                                    pickBeeper();
+                                    if(frontIsClear()){ moveForward(); }
+                                    if(onBeeper())
+                                    {
+                                        pickBeeper();
+                                        if(frontIsClear()){ moveForward(); }
+                                        if(onBeeper())
+                                        {
+                                            pickBeeper();
+                                            if(frontIsClear()){ moveForward(); }
+                                        }
+                                        else
+                                        { while(frontIsClear()) { moveForward(); }
+                                            turnAround();
+                                        }
+                                        dropBeeper();
+                                        moveForward();
+                                    }
+                                    else
+                                    { while(frontIsClear()) { moveForward(); }
+                                        turnAround();
+                                    }
+                                    dropBeeper();
+                                    moveForward();
+                                }
+                                else
+                                { while(frontIsClear()) { moveForward(); }
+                                    turnAround();
+                                }
+                                dropBeeper();
+                                moveForward();
+                            }
+                            else
+                            { while(frontIsClear()) { moveForward(); }
+                                turnAround();
+                            }
+                            dropBeeper();
+                            moveForward();
+                        }
+                        else
+                        { while(frontIsClear()) { moveForward(); }
+                            turnAround();
+                        }
+                        dropBeeper();
+                        moveForward();
+                    }
+                    else
+                    { while(frontIsClear()) { moveForward(); }
+                        turnAround();
+                    }
+                    dropBeeper();
+                    moveForward();
+                }
+                else
+                { while(frontIsClear()) { moveForward(); }
+                    turnAround();
+                }
+                dropBeeper();
+                moveForward();
+            }
+            else
+            { while(frontIsClear()) { moveForward(); }
+                turnAround();
+            }
+            dropBeeper();
+            
+            if(frontIsClear())
+            {
+                moveForward();
+            }
+        }
+        turnRight();
+        if(frontIsClear())
+        {
+            moveForward();
+            turnLeft();
+        }
+    }
+}
