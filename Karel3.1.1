@@ -1,0 +1,60 @@
+void partyAgain()
+{
+    while(frontIsClear() || onBeeper())
+    {
+        turnLeft();
+        pickBeeper();
+        
+        if(frontIsClear())
+        {
+            moveForward();
+            if(frontIsClear())
+            {
+                moveForward();
+                if(frontIsClear())
+                {
+                    moveForward();
+                    if(frontIsClear())
+                    {
+                        moveForward();
+                        if(frontIsClear())
+                        {
+                            moveForward();
+                            if(frontIsClear())
+                            {
+                                moveForward();
+                                if(frontIsClear())
+                                {
+                                    moveForward();
+                                    turnAround();
+                                    dropBeeper();
+                                    moveForward();
+                                }
+                                else{ dropBeeper(); turnAround(); }
+                                moveForward();
+                            }
+                            else{ dropBeeper(); turnAround(); }
+                            moveForward();
+                        }
+                        else{ dropBeeper(); turnAround(); }
+                        moveForward();
+                    }
+                    else{ dropBeeper(); turnAround(); }
+                    moveForward();
+                }
+                else{ dropBeeper(); turnAround(); }
+                moveForward();
+            }
+            else{ dropBeeper(); turnAround(); }
+            moveForward();
+        }
+        else{ dropBeeper(); turnAround(); }
+        
+        turnLeft();
+        
+        if(frontIsClear())
+        {
+            moveForward();
+        }
+    }
+}
