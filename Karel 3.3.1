@@ -1,119 +1,20 @@
 void findShelters()
 {
-    repeat(100)
+    repeat(4)
     {
         if(frontIsClear() && !beeperAhead())
         {
             moveForward();
-            // if not in shelter
-            if(leftIsClear() || frontIsClear() || rightIsClear())
+            
+            if((rightIsClear() || frontIsClear() || leftIsClear()) && !onBeeper())
             {
                 dropBeeper();
+                findShelters();
             }
-            else
-            {
-                IfInShelter();
-            }
-        }
-        else if(leftIsClear() && !rightIsClear())
-        {
-            turnLeft();
+            turnAround();
             moveForward();
-            if(!onBeeper()){ dropBeeper(); }
+            turnAround();
         }
-        else if(!leftIsClear() && rightIsClear())
-        {
-            turnRight();
-            moveForward();
-            if(!onBeeper() && (leftIsClear() || frontIsClear() || rightIsClear())){ dropBeeper(); }
-        }
-        else if(leftIsClear())
-        {
-            turnLeft();
-            
-            if(!beeperAhead())
-            {
-                moveForward();
-                
-                if(rightIsClear())
-                {
-                    turnRight();
-                    
-                    if(!beeperAhead())
-                    {
-                        moveForward();
-                    }
-                }
-            }
-        }
-        else if(rightIsClear())
-        {
-            turnRight();
-            
-            if(!beeperAhead())
-            {
-                moveForward();
-            }
-        }
-        else
-        {
-            IfInShelter();
-        }
-    }
-}
-
-void IfInShelter()
-{
-    turnAround();
-    moveForward();
-    
-    if(frontIsClear() && !beeperAhead())
-    {
-        moveForward();
-        dropBeeper();
-    }
-    else if(leftIsClear() && !rightIsClear())
-    {
         turnLeft();
-        moveForward();
-        if(!onBeeper()){ dropBeeper(); }
-    }
-    else if(!leftIsClear() && rightIsClear())
-    {
-        turnRight();
-        moveForward();
-        if(!onBeeper()){ dropBeeper(); }
-    }
-    else if(leftIsClear())
-    {
-        turnLeft();
-        
-        if(!beeperAhead())
-        {
-            moveForward();
-            
-            if(rightIsClear())
-            {
-                turnRight();
-                
-                if(!beeperAhead())
-                {
-                    moveForward();
-                }
-            }
-        }
-    }
-    else if(rightIsClear())
-    {
-        turnRight();
-        
-        if(!beeperAhead())
-        {
-            moveForward();
-        }
-    }
-    else
-    {
-        moveForward();
     }
 }
