@@ -1,0 +1,46 @@
+void saveTheFlowers()
+{
+    repeat(10)
+    {
+        if(onBeeper())
+        {
+            pickBeeper();
+            turnLeft();
+            moveForward();
+        }
+        if(rightIsClear())
+        {
+            turnRight();
+            moveForward();
+        }
+        else if(frontIsClear())
+        {
+            moveForward();
+        }
+        else{
+            turnLeft();
+            moveForward();
+        }
+    }
+    dropBeeper();
+    repeat(10)
+    {
+        if(rightIsClear())
+        {
+            turnRight();
+            moveForward();
+        }
+        else if(frontIsClear())
+        {
+            moveForward();
+        }
+        else{
+            turnLeft();
+            dropBeeper();
+            moveForward();
+            turnRight();
+            moveForward();
+        }
+    }
+    turnLeft();
+}
