@@ -1,60 +1,32 @@
 void fetchTheStars()
 {
-    while(frontIsClear() || !onBeeper())
+    turnLeft();
+    goForward();
+    dropBeeper();
+    turnLeft(); //nach dropStars
+    if(frontIsClear())
     {
-        turnLeft();
-        
-        if(frontIsClear())
-        {
-            moveForward();
-            if(frontIsClear())
-            {
-                moveForward();
-                if(frontIsClear())
-                {
-                    moveForward();
-                    if(frontIsClear())
-                    {
-                        moveForward();
-                        if(frontIsClear())
-                        {
-                            moveForward();
-                            if(frontIsClear())
-                            {
-                                moveForward();
-                                if(frontIsClear())
-                                {
-                                    moveForward();
-                                    turnAround();
-                                    pickBeeper();
-                                    moveForward();
-                                }
-                                else{ pickBeeper();turnAround(); }
-                                moveForward();
-                            }
-                            else{ pickBeeper();turnAround(); }
-                            moveForward();
-                        }
-                        else{ pickBeeper();turnAround(); }
-                        moveForward();
-                    }
-                    else{ pickBeeper();turnAround(); }
-                    moveForward();
-                }
-                else{ pickBeeper();turnAround(); }
-                moveForward();
-            }
-            else{ pickBeeper();turnAround(); }
-            moveForward();
-        }
-        else{ pickBeeper();turnAround(); }
-        
-        dropBeeper();
-        turnLeft();
-        
-        if(frontIsClear())
-        {
-            moveForward();
-        }
+        moveForward();
+        fetchTheStars();
     }
+}
+
+void goForward()
+{
+    if(frontIsClear())
+    {
+        moveForward();
+        goForward();
+        dropStars();
+    }
+}
+
+void dropStars()
+{
+    if(onBeeper())
+    {
+        pickBeeper();
+        turnAround();
+    }
+    moveForward();
 }
