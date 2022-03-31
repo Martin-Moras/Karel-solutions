@@ -1,0 +1,61 @@
+
+void addSmart()
+{
+    if(rightIsClear())
+    {
+        if(onBeeper() && beeperAhead())//2 beeper
+        {
+            skip();
+            one();
+        }
+        else if((onBeeper() && !beeperAhead()) || (!onBeeper() && beeperAhead()))//1 beeper
+        {
+            addOne();
+            addSmart();
+        }
+        else//0 beeper
+        {
+            skip();
+            addSmart();
+        }
+    }
+}
+
+void one()
+{
+    if(onBeeper() && beeperAhead())//2 beeper
+    {
+        addOne();
+        one();
+    }
+    else if((onBeeper() && !beeperAhead()) || (!onBeeper() && beeperAhead()))//1 beeper
+    {
+        skip();
+        one();
+    }
+    else//0 beeper
+    {
+        addOne();
+        addSmart();
+    }
+}
+
+void addOne()
+{
+    moveForward();
+    moveForward();
+    dropBeeper();
+    turnRight();
+    moveForward();
+    turnRight();
+    moveForward();
+    moveForward();
+    turnAround();
+}
+
+void skip()
+{
+    turnRight();
+    moveForward();
+    turnLeft();
+}
