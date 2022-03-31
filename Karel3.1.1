@@ -1,60 +1,35 @@
 void partyAgain()
 {
-    while(frontIsClear() || onBeeper())
+    turnLeft();
+    pickBeeper();
+    goForward();
+    turnLeft(); //nach dropStars
+    if(frontIsClear())
     {
-        turnLeft();
-        pickBeeper();
-        
-        if(frontIsClear())
-        {
-            moveForward();
-            if(frontIsClear())
-            {
-                moveForward();
-                if(frontIsClear())
-                {
-                    moveForward();
-                    if(frontIsClear())
-                    {
-                        moveForward();
-                        if(frontIsClear())
-                        {
-                            moveForward();
-                            if(frontIsClear())
-                            {
-                                moveForward();
-                                if(frontIsClear())
-                                {
-                                    moveForward();
-                                    turnAround();
-                                    dropBeeper();
-                                    moveForward();
-                                }
-                                else{ dropBeeper(); turnAround(); }
-                                moveForward();
-                            }
-                            else{ dropBeeper(); turnAround(); }
-                            moveForward();
-                        }
-                        else{ dropBeeper(); turnAround(); }
-                        moveForward();
-                    }
-                    else{ dropBeeper(); turnAround(); }
-                    moveForward();
-                }
-                else{ dropBeeper(); turnAround(); }
-                moveForward();
-            }
-            else{ dropBeeper(); turnAround(); }
-            moveForward();
-        }
-        else{ dropBeeper(); turnAround(); }
-        
-        turnLeft();
-        
-        if(frontIsClear())
-        {
-            moveForward();
-        }
+        moveForward();
+        partyAgain();
     }
+}
+
+void goForward()
+{
+    if(frontIsClear())
+    {
+        moveForward();
+        goForward();
+        dropStars();
+    }
+    else
+    {
+        dropBeeper();
+    }
+}
+
+void dropStars()
+{
+    if(onBeeper())
+    {
+        turnAround();
+    }
+    moveForward();
 }
